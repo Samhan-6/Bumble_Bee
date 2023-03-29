@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="login.css">
+    </head>
+
+    <body>
+        
+        <div class="container">
+            
+            <h1 class="logo"><a href="index.html">Bumble Bee</a></h1>
+            <h2>Login</h2>
+            
+        
+            <form>
+        
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+      
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+      
+                <button type="submit">Login</button>
+            </form>
+        
+            <div class="signup-link">
+                <p>Don't have an account?</p>
+                <a href="register.html">Sign up</a>
+            </div>
+            
+        </div>
+        
+        
+  
+        <script>
+            
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (event) => {
+                
+                event.preventDefault(); // prevent the form from submitting
+                const username = document.querySelector('#username').value;
+                const password = document.querySelector('#password').value;
+                
+                // TODO: validate username and password
+            
+                alert(`Username: ${username}\nPassword: ${password}`);
+            });
+        </script>
+  
+    </body>
+    
+</html>

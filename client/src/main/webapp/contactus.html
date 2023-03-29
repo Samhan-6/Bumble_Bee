@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Bumble Bee - Contact Us</title>
+        <link rel="stylesheet" type="text/css" href="contactus.css">
+        
+    </head>
+    
+
+    <body>
+    
+        <header>
+            <h1>Bumble Bee</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="#">Installment Plans</a></li>
+                    </ul>
+                </nav>
+        </header>
+        
+        
+    
+        <main>
+            
+        
+            <h2>Contact Us</h2>
+            <p>Feel free to get in touch with us if you have any questions or concerns.</p>
+            
+        
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            
+                <button type="submit">Submit</button>
+            </form>
+        
+        </main>
+    
+        <footer>
+            <p>&copy; Bumble Bee. All rights reserved.</p>
+        </footer>
+    
+        <script>
+            
+            // Validation for the contact form
+            
+            const form = document.querySelector('form');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+        
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                
+            
+                if (nameInput.value.trim() === '') {
+                    alert('Please enter your name');
+                    nameInput.focus();
+                    return false;
+                }
+            
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email');
+                    emailInput.focus();
+                    return false;
+                }
+            
+                if (messageInput.value.trim() === '') {
+                    alert('Please enter your message');
+                    messageInput.focus();
+                    return false;
+                }
+            
+                // Send the form data to the server (not implemented)
+                
+                alert('Form submitted successfully');
+            });
+            
+        </script>
+        
+    </body>
+    
+</html>

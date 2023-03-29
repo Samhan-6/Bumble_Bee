@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="register.css"/>
+        <title>Register</title>
+    </head>
+    
+    <body>
+        
+        <header>
+		<h1>Bumble Bee</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Categories</a></li>
+				<li><a href="#">Brands</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<a href="login.html" class="login">Login</a>
+
+	</header>
+
+	<section class="register-form">
+		<h2>Register Now</h2>
+
+		<form action="/register" method="POST">
+
+			<label for="full-name">Full Name:</label>
+			<input type="text" id="full-name" name="name" required>
+
+			<label for="email">Email Address:</label>
+			<input type="email" id="email" name="email" required>
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+
+
+			<input type="submit" value="Register" class="btn">
+
+		</form>
+	</section>
+
+
+
+	<footer>
+		<p>&copy; 2023 Bumble Bee. All rights reserved.</p>
+	</footer>
+
+	<!-- JavaScript -->
+
+	<script>
+
+		const form = document.querySelector('form');
+		const fullName = document.querySelector('#full-name');
+		const email = document.querySelector('#email');
+		const password = document.querySelector('#password');
+                const form1 = document.querySelector('form1');
+
+                // HTML code for a registration form with client-side form validation and submission to a RESTful API endpoint
+                form1.addEventListener('submit', e => {
+                    e.preventDefault();
+    
+                    const fullName = document.querySelector('#full-name').value;
+                    const email = document.querySelector('#email').value;
+                    const password = document.querySelector('#password').value;
+
+                    const data = {
+                        name: fullName,
+                        email: email,
+                        password: password
+                    };
+
+                    fetch('/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        // Do something with the response data
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        // Handle the error
+                    });
+                });
+
+
+		form.addEventListener('submit', e => {
+			e.preventDefault();
+			checkInputs();
+		});
+
+
+		function checkInputs() {
+                    
+                    const fullNameValue = fullName.value.trim();
+                    const emailValue = email.value.trim();
+                    const passwordValue = password.value.trim();
+
+                    if (fullNameValue === '') {
+			setErrorFor(fullName, 'Full name cannot be empty');
+                    }
+                    else {
+			setSuccessFor(fullName);
+                    }
+
+                    if (emailValue === '') {
+                        setErrorFor(email, 'Email address cannot be empty');
+                    }
+                    
+                }
+			
+				
+
+	</script>
+        
+    </body>
+</html>
