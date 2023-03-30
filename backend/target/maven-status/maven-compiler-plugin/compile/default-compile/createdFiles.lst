@@ -1,0 +1,7 @@
+com\webapp\backend\util\UserDAO.class
+com\webapp\backend\model\User.class
+com\webapp\backend\resources\JakartaEE91Resource.class
+com\webapp\backend\controller\RegisterServlet.class
+com\webapp\backend\JakartaRestConfiguration.class
+com\webapp\backend\resources\UserResource.class
+com\webapp\backend\util\DBUtil.class

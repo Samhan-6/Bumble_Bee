@@ -10,36 +10,35 @@
     <body>
         
         <header>
-		<h1>Bumble Bee</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Categories</a></li>
-				<li><a href="#">Brands</a></li>
-				<li><a href="contactus.html">Contact Us</a></li>
-			</ul>
-		</nav>
+            <h1>Bumble Bee</h1>
+            <nav>
+                <ul>   
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
 
-		<a href="login.html" class="login">Login</a>
+            <a href="login.html" class="login">Login</a>
 
 	</header>
 
 	<section class="register-form">
 		<h2>Register Form</h2>
 
-		<form action="RegisterServlet" method="post">
+		<form action="/register" method="post">                   
 
-			<label for="full-name">Username:</label>
-			<input type="text" id="username" name="name" required>
+                    <label for="full-name">Username:</label>
+                    <input type="text" id="name" name="name" required>
 
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
 
-
-                        <input type="submit" value="Register" class="btn" onclick="registerUser()">
+                    <input type="submit" value="Register" class="btn" onsubmit="registerUser(); return false;">
 
 		</form>
 	</section>
@@ -47,7 +46,7 @@
 
 
 	<footer>
-		<p>&copy; 2023 Bumble Bee. All rights reserved.</p>
+            <p>&copy; 2023 Bumble Bee. All rights reserved.</p>
 	</footer>
 
 	<!-- JavaScript -->
@@ -55,17 +54,17 @@
 	<script>
 
 		const form = document.querySelector('form');
-		const fullName = document.querySelector('#full-name');
+		const name = document.querySelector('#name');
 		const email = document.querySelector('#email');
 		const password = document.querySelector('#password');
                 
                 //registerUser() function called when Register button is clicked
                 function registerUser(){
-                    var username = document.getElementById("username").value;
+                    var name = document.getElementById("name").value;
                     var email = document.getElementById("email").value;
                     var password = document.getElementById("password").value;
                     
-                    var xhr = new XMLRequest();
+                    var xhr = new XMLHttpRequest();
                     xhr.open("POST", "RegisterServlet");
                     xhr.setRequestHeader("Content-Type", "application/json");
                     xhr.onreadystatechange = function(){
@@ -77,19 +76,19 @@
                             }
                         }
                     };
-                    var user = {"username": username, "email": email, "password": password};
-                    xhr.send(Json.stringify(user));
+                    var user = {"name": name, "email": email, "password": password};
+                    xhr.send(JSON.stringify(user));
                 }
                 
 
 
 		function checkInputs() {
                     
-                    const fullNameValue = fullName.value.trim();
+                    const nameValue = name.value.trim();
                     const emailValue = email.value.trim();
                     const passwordValue = password.value.trim();
 
-                    if (fullNameValue === '') {
+                    if (nameValue === '') {
 			setErrorFor(fullName, 'Full name cannot be empty');
                     }
                     else {
@@ -98,6 +97,14 @@
 
                     if (emailValue === '') {
                         setErrorFor(email, 'Email address cannot be empty');
+                    }else{
+                        setSuccessFor(email);
+                    }
+                    
+                    if (passwordValue === '') {
+                        setErrorFor (password, 'Password cannot be empty');
+                    }else{
+                        setSuccessFor(password);
                     }
                     
                 }

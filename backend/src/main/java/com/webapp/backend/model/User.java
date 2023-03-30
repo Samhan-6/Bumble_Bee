@@ -4,28 +4,28 @@ package com.webapp.backend.model;
 
 public class User {
     
-    private String username;
+    private String name;
     private String email;
     private String password;
     
     public User(){
-        this.username = "";
+        this.name = "";
         this.email = "";
         this.password = "";
     }
 
-    public User(String username, String email, String password) {
-        this.username = username;
+    public User(String name, String email, String password) {
+        this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
