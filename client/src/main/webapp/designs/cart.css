@@ -13,7 +13,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  flex-wrap: wrap;
 }
 
 .top-header h1 {
@@ -37,31 +36,37 @@ body {
   margin-left: 0.5rem;
 }
 
+.top-header nav li:last-child {
+  margin-right: 1rem;
+}
+
 .top-header nav a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
-.cart-icon {
-  order: 2;
-  margin-top: 1rem;
+.top-header .cart-icon {
+  margin-left: 1rem;
 }
 
-.cart-icon a {
-  display: block;
+.top-header .cart-icon i {
+  font-size: 1.5rem;
 }
 
-.cart-count {
+.top-header .cart-count {
   background-color: #fff;
   color: #333;
-  font-size: 0.8rem;
+  border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 1.5rem;
-  margin-left: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
 }
 
 /* main styles */
