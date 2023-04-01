@@ -1,8 +1,7 @@
-/* body styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+*{
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
 }
 
 /* header styles */
@@ -18,6 +17,11 @@ body {
 .top-header h1 {
   margin: 0;
   font-size: 2rem;
+  font-size: 40px;
+}
+
+.top-header nav ul li a{
+    font-size: 20px;
 }
 
 .top-header nav ul {
@@ -52,15 +56,15 @@ body {
   align-items: center;
 }
 
-.top-header .cart-icon a {
-  font-size: 0.8rem;
+.top-header .cart-icon i {
+  font-size: 20px;
   margin-right: 0.5rem;
 }
 
 .top-header .cart-count {
   background-color: #fff;
   color: #333;
-  font-size: 0.8rem;
+  font-size: 16px;
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
@@ -79,10 +83,20 @@ main {
 }
 
 .cart-container {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.cart-container table thead tr th{
+    font-size: 17px;
+}
+
+.cart-container table tbody tr td{
+    font-size: 15px;
 }
 
 table {

@@ -1,33 +1,41 @@
-body {
-    font-family: Arial, sans-serif;
+*{
+    padding: 0;
     margin: 0;
+    font-family: monospace;
 }
 
 header {
     background-color: #ffa500;
     color: #fff;
     padding: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav {
-    display: inline-block;
-    float: right;
+    display: flex;
 }
 
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
 }
 
 li {
-    display: inline-block;
     margin-left: 20px;
 }
 
 a {
+    font-size: 32px;
     color: #fff;
     text-decoration: none;
+    margin-left: 20px;
+}
+
+a:last-of-type{
+    margin-left: auto;
 }
 
 main {

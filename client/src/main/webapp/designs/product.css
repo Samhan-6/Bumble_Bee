@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: monospace;
 }
 
 .top-header {
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   z-index: 9999;
 }
 
@@ -41,30 +41,7 @@ nav ul li a {
   color: #fff;
   display: block;
   padding: 10px;
-  text-decoration: none;
-}
-
-nav ul li:hover > ul.dropdown {
-  display: block;
-}
-
-nav ul li ul.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #333;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-nav ul li ul.dropdown li {
-  margin: 10px 0;
-}
-
-nav ul li ul.dropdown li a {
-  color: #fff;
-  font-size: 0.9rem;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -77,54 +54,33 @@ main {
 .product {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 18px;
   margin-top: 80px;
 }
 
 .product-details {
   background-color: #fff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
 
 .product h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 0;
 }
 
-.product-description {
-  margin-bottom: 20px;
-}
-
-.product-features {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  margin-bottom: 20px;
-}
-
-.product-features li {
-  margin-bottom: 5px;
-}
-
-.product-price {
-  font-size: 28px;
-  font-weight: bold;
-  color: #008000;
+.product-details h2 {
   margin-bottom: 10px;
 }
 
-.add-to-cart {
-  background-color: #008000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.product-price {
+  font-size: 18px;
+  font-weight: normal;
+  color: #008000;
+  margin-bottom: 10px;
 }
-
 
 .product img {
   width: 100%;
@@ -132,11 +88,11 @@ main {
   margin-bottom: 10px;
 }
 
-
 .add-to-cart {
   background-color: #4CAF50;
   color: white;
   border: none;
+  border-radius: 5px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -154,7 +110,7 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 18px;
 }
 
 .cart-icon {
