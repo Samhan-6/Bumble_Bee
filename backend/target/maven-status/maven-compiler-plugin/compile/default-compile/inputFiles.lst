@@ -1,7 +1,12 @@
+C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\dao\UserDAO.java
 C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\controller\RegisterServlet.java
 C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\model\User.java
 C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\util\DBUtil.java
 C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\resources\JakartaEE91Resource.java
 C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\resources\UserResource.java
 C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\JakartaRestConfiguration.java
-C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\util\UserDAO.java
+C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\model\LoanApplication.java
+C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\service\LoanApplicationService.java
+C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\controller\LoanApplicationServlet.java
+C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\dao\LoanApplicationDAO.java
+C:\Users\Computer Hub\gitHub\bumblebee\Bumble_Bee\backend\src\main\java\com\webapp\backend\resources\LoanApplicationResource.java

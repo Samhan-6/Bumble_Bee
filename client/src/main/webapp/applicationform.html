@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <title>Form Application | Bumble Bee</title>
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     
     <body>
         
-        <form id="loan-application-form">
+        <form id="loan-application-form" action="LoanApplicationServlet" method="post">
             
             <h1>Loan Application Form</h1>
             
@@ -76,62 +76,47 @@
         </footer>
         
         <script>
+            
+            // get the loan application form element
             const loanApplicationForm = document.getElementById("loan-application-form");
 
+            // add an event listener to the form submission
             loanApplicationForm.addEventListener("submit", function(event) {
+                // prevent the default form submission behavior
                 event.preventDefault();
 
-                const firstName = document.getElementById("first-name").value;
-                const lastName = document.getElementById("last-name").value;
-                const sex = document.getElementById("sex").value;
-                const email = document.getElementById("email").value;
-                const mobileNumber = document.getElementById("mobile-number").value;
-                const homeNumber = document.getElementById("home-number").value;
-                const address = document.getElementById("address").value;
-                const city = document.getElementById("city").value;
-                const zipCode = document.getElementById("zip-code").value;
-                const comment = document.getElementById("comment").value;
+                // get the form data
+                const formData = new FormData(loanApplicationForm);
 
-            // Here, you can perform validation on the form inputs, such as checking if required fields are filled in correctly
+                // create an object to hold the form data
+                const formObject = {};
+                formData.forEach(function(value, key) {
+                    formObject[key] = value;
+                });
 
-            // Once the form data is validated, you can submit it to the server via an HTTP request
-
-            // You can use the fetch API to send a POST request to the server with the form data
-            fetch("url/to/submit/form/data", {
-                method: "POST",
-                body: JSON.stringify({
-                    firstName: firstName,
-                    lastName: lastName,
-                    sex: sex,
-                    email: email,
-                    mobileNumber: mobileNumber,
-                    homeNumber: homeNumber,
-                    address: address,
-                    city: city,
-                    zipCode: zipCode,
-                    comment: comment
-                }),           
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            
-            .then(response => response.json())
-            .then(data => {
-                // Here, you can handle the response from the server, such as showing a success message to the user
-                console.log(data);
-                
-                //redirect to the product page
-                window.location.href = "product.html";
-                
-            })
-            
-            .catch(error => {
-                // Here, you can handle any errors that occurred during the request
-                console.error(error);
+                // send a POST request to the servlet with the form data
+                fetch("/LoanApplicationServlet", {
+                    method: "POST",
+                    body: JSON.stringify(formObject),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // handle the response from the servlet
+                    console.log(data);
+                    // redirect the user to a success page
+                    window.location.href = "/LoanApplicationSuccess";
+                })
+                .catch(error => {
+                    // handle any errors that occurred during the request
+                    console.error(error);
+                    // display an error message to the user
+                    alert("An error occurred while submitting the form. Please try again later.");
+                });
             });
-            
-            });
+
 
         </script>
 
@@ -139,4 +124,3 @@
     </body>
     
 </html>
-

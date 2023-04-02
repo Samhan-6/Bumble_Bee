@@ -2,7 +2,7 @@ package com.webapp.backend.controller;
 
 import com.webapp.backend.model.User;
 import com.webapp.backend.util.DBUtil;
-import com.webapp.backend.util.UserDAO;
+import com.webapp.backend.dao.UserDAO;
 import jakarta.servlet.RequestDispatcher;
 
 import java.sql.Connection;

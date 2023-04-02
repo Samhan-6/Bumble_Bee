@@ -1,4 +1,4 @@
-package com.webapp.backend.util;
+package com.webapp.backend.dao;
 
 import com.webapp.backend.model.User;
 
