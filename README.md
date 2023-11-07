@@ -1,4 +1,5 @@
-# Bumble_Bee
+
+# Advance programming sample project
 
 This is a Online loan offering system to buy items and it in installments.
 
